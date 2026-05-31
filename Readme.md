@@ -38,8 +38,8 @@ Coming Soon 🚀
 
 ## Connect With Me
 
-* LinkedIn: https://linkedin.com/
-* GitHub: https://github.com/
+* LinkedIn: https://linkedin.com/in/narendra-deshmukh-cloud
+* GitHub: https://github.com/narendra-clouds
 
 ## Run Locally
 
