@@ -32,9 +32,6 @@ Hi, I'm Narendra Deshmukh — an aspiring AWS Cloud & DevOps Engineer passionate
 * EC2 Access Recovery Project
 * VPC Architecture Project
 
-## Live Demo
-
-Coming Soon 🚀
 
 ## Connect With Me
 
@@ -46,7 +43,7 @@ Coming Soon 🚀
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/narendra-deshmukh-portfolio.git
+git clone https://github.com/narendra-clouds/narendra-deshmukh-portfolio.git
 ```
 
 2. Open the project folder
