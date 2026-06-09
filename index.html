@@ -1,52 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Narendra Deshmukh | AWS Cloud & DevOps Engineer</title>
-  <meta content="Narendra Deshmukh - AWS Cloud Engineer and DevOps Enthusiast from Pune, Maharashtra. Hands-on experience with EC2, S3, VPC, IAM, CloudFront, Auto Scaling and more." name="description">
-  <meta content="AWS, Cloud Engineer, DevOps, Pune, S3, EC2, VPC, IAM" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favico.png" rel="icon">
+  <meta content="Narendra Deshmukh - AWS Cloud Engineer from Pune. Internship at Cravita Pvt Ltd. Training at Fortune Cloud Technologies." name="description">
+  <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ── OPEN TO WORK BANNER ── */
+    .otw-bar {
+      background: #0a0f1e;
+      border-bottom: 2px solid #149ddd;
+      color: #fff;
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      position: relative;
+      z-index: 9999;
+    }
+    .otw-dot {
+      display: inline-block;
+      width: 9px; height: 9px;
+      background: #28e07a;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: blink 1.6s infinite;
+      vertical-align: middle;
+    }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .otw-bar a { color: #149ddd; text-decoration: none; font-weight: 600; }
+    .otw-bar a:hover { text-decoration: underline; }
+
+    /* ── AWS BADGE BAR ── */
+    .aws-bar {
+      background: #040b14;
+      padding: 14px 0;
+      border-bottom: 1px solid #1a2a3a;
+      text-align: center;
+    }
+    .abadge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(20,157,221,0.1);
+      border: 1px solid rgba(20,157,221,0.25);
+      color: #149ddd;
+      padding: 5px 13px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+      margin: 3px; transition: all 0.25s;
+    }
+    .abadge:hover { background: rgba(20,157,221,0.22); transform: translateY(-2px); }
+
+    /* ── DOWNLOAD BTN ── */
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg,#149ddd,#0d7ab5);
+      color: white; padding: 11px 26px; border-radius: 8px;
+      text-decoration: none; font-weight: 700; font-size: 14px;
+      transition: all 0.3s; box-shadow: 0 4px 14px rgba(20,157,221,0.3);
+      margin-top: 16px;
+    }
+    .dl-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(20,157,221,0.4); color: white; }
+
+    /* ── GITHUB STATS ── */
+    .gh-stats-wrap {
+      margin-top: 18px;
+      background: #0d1117;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #1a2a3a;
+      overflow: hidden;
+    }
+    .gh-stats-wrap h6 {
+      color: #149ddd; font-size: 13px; font-weight: 700;
+      margin: 0 0 12px; letter-spacing: 0.3px;
+    }
+    .gh-stats-wrap img {
+      width: 100%; height: auto; display: block;
+      border-radius: 6px;
+    }
+
+    /* ── CERT CARDS ── */
+    .cert-card {
+      background: linear-gradient(135deg,#f8f9ff,#eef2ff);
+      border: 1px solid #c5ceff; border-radius: 12px;
+      padding: 18px; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 14px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .cert-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .cert-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: linear-gradient(135deg,#149ddd,#0d7ab5);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 22px; color: white;
+    }
+    .badge-status {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 20px; font-size: 11px; font-weight: 700; margin-top: 4px;
+    }
+    .s-done     { background:#d4edda; color:#155724; }
+    .s-progress { background:#fff3cd; color:#856404; }
+    .s-planned  { background:#e2e3e5; color:#495057; }
+
+    /* ── LEARNING ITEMS ── */
+    .learn-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 14px; background: #f8f9fa;
+      border-radius: 8px; margin-bottom: 10px;
+      border-left: 3px solid #149ddd;
+    }
+
+    /* ── PROJECT CARDS ── */
+    .proj-card {
+      border: 1px solid #e0e0e0; border-radius: 10px;
+      padding: 22px; height: 100%;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
+    .proj-badge {
+      display: inline-block; padding: 4px 10px;
+      border-radius: 4px; font-size: 11px; font-weight: 700;
+      margin-bottom: 12px; letter-spacing: 0.3px;
+    }
+    .proj-services { font-size: 12px; color: #777; margin: 6px 0 10px; }
+    .proj-btn {
+      display: inline-block; background: #149ddd; color: white;
+      padding: 8px 18px; border-radius: 4px; text-decoration: none;
+      font-weight: 600; font-size: 13px; margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .proj-btn:hover { background: #0d7ab5; color: white; }
+
+    /* ── SERVERLESS NOTE ── */
+    .sl-note {
+      background: linear-gradient(135deg,#f0f8ff,#e8f4fd);
+      border: 1px solid #bee3f8; border-radius: 8px;
+      padding: 13px 16px; margin-top: 16px;
+      font-size: 13px; color: #2c7da0; line-height: 1.6;
+    }
+  </style>
 </head>
 
 <body class="index-page">
 
+  <!-- Open To Work Banner -->
+  <div class="otw-bar">
+    <span class="otw-dot"></span>
+    <strong>Open to Work</strong> — Fresher AWS Cloud Engineer &amp; DevOps Engineer Roles in Pune
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    <a href="mailto:deshmukhn298@gmail.com">deshmukhn298@gmail.com</a>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    <a href="tel:+919322531165">+91 9322531165</a>
+  </div>
+
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
-
     <div class="profile-img">
       <img src="assets/img/my-profile-img.png" alt="Narendra Deshmukh" class="img-fluid rounded-circle">
     </div>
-
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename">Narendra Deshmukh</h1>
     </a>
-
     <div class="social-links text-center">
-      <a href="https://github.com/narendra-clouds" target="_blank" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/narendra-deshmukh-cloud/" target="_blank" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="mailto:deshmukhn298@gmail.com" class="email" title="Email"><i class="bi bi-envelope"></i></a>
+      <a href="https://github.com/narendra-clouds" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/narendra-deshmukh-cloud/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:deshmukhn298@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
     </div>
-
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
@@ -54,40 +185,75 @@
         <li><a href="#skills"><i class="bi bi-gear navicon"></i> Skills</a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="#certifications"><i class="bi bi-award navicon"></i> Certifications</a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in" class="">
+      <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Narendra Deshmukh</h2>
-        <p>I'm <span class="typed" data-typed-items="AWS Cloud Engineer, DevOps Enthusiast, Cloud Infrastructure Builder, BCA Graduate">AWS Cloud Engineer</span></p>
+        <p>I'm <span class="typed" data-typed-items="AWS Cloud Engineer,DevOps Enthusiast,Cloud Infrastructure Builder,BCA Final Year Student">AWS Cloud Engineer</span></p>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- AWS Services Badge Bar -->
+    <div class="aws-bar">
+      <div class="container">
+        <span class="abadge"><i class="bi bi-server"></i> EC2</span>
+        <span class="abadge"><i class="bi bi-bucket"></i> S3</span>
+        <span class="abadge"><i class="bi bi-diagram-3"></i> VPC</span>
+        <span class="abadge"><i class="bi bi-shield-lock"></i> IAM</span>
+        <span class="abadge"><i class="bi bi-lightning-charge"></i> Lambda</span>
+        <span class="abadge"><i class="bi bi-database"></i> DynamoDB</span>
+        <span class="abadge"><i class="bi bi-globe"></i> CloudFront</span>
+        <span class="abadge"><i class="bi bi-database-check"></i> RDS</span>
+        <span class="abadge"><i class="bi bi-bell"></i> SNS</span>
+        <span class="abadge"><i class="bi bi-collection"></i> SQS</span>
+        <span class="abadge"><i class="bi bi-graph-up"></i> CloudWatch</span>
+        <span class="abadge"><i class="bi bi-eye"></i> CloudTrail</span>
+        <span class="abadge"><i class="bi bi-arrow-repeat"></i> Auto Scaling</span>
+        <span class="abadge"><i class="bi bi-hdd-network"></i> ALB</span>
+      </div>
+    </div>
+
+    <!-- About -->
     <section id="about" class="about section">
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>Self-taught AWS Cloud Engineer with hands-on experience building production-grade infrastructure. Passionate about cloud security, high availability, and zero-downtime deployments.</p>
+        <p>AWS Cloud Engineer with internship experience at Cravita Pvt Ltd and professional training at Fortune Cloud Technologies, Pune.</p>
       </div>
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.png" class="img-fluid" alt="Narendra Deshmukh">
+
+          <!-- Left col: photo + download + github stats -->
+          <div class="col-lg-4 text-center">
+            <img src="assets/img/my-profile-img.png" class="img-fluid" alt="Narendra Deshmukh"
+                 style="border-radius:12px;max-width:260px;width:100%;">
+            <div>
+              <a href="assets/resume/narendra-deshmukh-resume.pdf" download class="dl-btn">
+                <i class="bi bi-download"></i> Download Resume
+              </a>
+            </div>
+            <!-- GitHub Stats — fixed, no overflow -->
+            <div class="gh-stats-wrap">
+              <h6><i class="bi bi-github"></i> &nbsp;GitHub Activity</h6>
+              <img src="https://github-readme-stats-eight-black-31.vercel.app/api?username=narendra-clouds&show_icons=true&theme=tokyonight"
+                   alt="Narendra GitHub Stats" loading="lazy">
+            </div>
           </div>
+
+          <!-- Right col: text info -->
           <div class="col-lg-8 content">
             <h2>AWS Cloud Engineer &amp; DevOps Enthusiast</h2>
             <p class="fst-italic py-3">
-              BCA final year student from Pune with real hands-on AWS experience — not just theory. I have built and deployed live infrastructure on AWS including VPCs from scratch, Blue-Green deployments with Canary rollout, EC2 web servers, S3 hosted websites with CloudFront CDN, and complete IAM security setups.
+              BCA final year student from Pune with real hands-on AWS experience — not just theory. Currently a Cloud Engineer Intern at <strong>Cravita Pvt Ltd</strong> and training under the AWS &amp; DevOps program at <strong>Fortune Cloud Technologies, Pune</strong>. I have built and deployed live infrastructure on AWS including complete VPCs, Blue-Green deployments, Serverless APIs, S3 + CloudFront websites, and production IAM setups.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -95,6 +261,7 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>18 Oct 2003</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9322531165</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Pune, Maharashtra, India</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Internship:</strong> <span>Cravita Pvt Ltd — 6 months</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -102,40 +269,41 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BCA (Computer Applications)</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>deshmukhn298@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span><a href="https://github.com/narendra-clouds" target="_blank">github.com/narendra-clouds</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Training:</strong> <span>Fortune Cloud Technologies, Pune</span></li>
                 </ul>
               </div>
             </div>
             <p class="py-3">
-              Every project I have built is live on GitHub with screenshots, architecture diagrams, and documentation. I work exclusively on real AWS accounts — not simulators. Currently preparing for AWS Cloud Practitioner certification and actively looking for fresher AWS / DevOps Engineer roles in Pune.
+              Every project I have built is live on GitHub with screenshots, architecture diagrams, and full documentation. I work exclusively on real AWS accounts — not simulators. Currently preparing for AWS Cloud Practitioner certification and actively looking for fresher AWS / DevOps Engineer roles in Pune.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats -->
     <section id="stats" class="stats section">
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-cloud-check"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1">5</span>
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1">11</span>
               <p><strong>AWS Projects</strong> <span>live on GitHub</span></p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-server"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1">10</span>
-              <p><strong>EC2 Instances</strong> <span>deployed &amp; configured</span></p>
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1">14</span>
+              <p><strong>AWS Services</strong> <span>hands-on experience</span></p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
-              <i class="bi bi-diagram-3"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1">8</span>
-              <p><strong>AWS Services</strong> <span>hands-on experience</span></p>
+              <i class="bi bi-briefcase"></i>
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1">6</span>
+              <p><strong>Months Internship</strong> <span>Cravita Pvt Ltd</span></p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -149,118 +317,135 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills" class="skills section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Technical Skills</h2>
-        <p>Core AWS services and DevOps tools with real hands-on project experience.</p>
+        <p>Core AWS services and DevOps tools with real hands-on project and internship experience.</p>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row skills-content skills-animation">
           <div class="col-lg-6">
             <div class="progress">
-              <span class="skill"><span>AWS EC2 &amp; Auto Scaling</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>AWS EC2 &amp; Auto Scaling</span><i class="val">90%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
             <div class="progress">
-              <span class="skill"><span>AWS S3 &amp; CloudFront</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>AWS S3 &amp; CloudFront</span><i class="val">90%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
             <div class="progress">
-              <span class="skill"><span>AWS VPC &amp; Networking</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>AWS VPC &amp; Networking</span><i class="val">85%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
             <div class="progress">
-              <span class="skill"><span>IAM &amp; Cloud Security</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>IAM &amp; Cloud Security</span><i class="val">85%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="progress">
-              <span class="skill"><span>Application Load Balancer</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>Lambda + API Gateway + DynamoDB</span><i class="val">82%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
             <div class="progress">
-              <span class="skill"><span>Linux &amp; Bash Scripting</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>Linux &amp; Bash Scripting</span><i class="val">78%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
             <div class="progress">
-              <span class="skill"><span>Git &amp; GitHub</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>Git &amp; GitHub + CI/CD</span><i class="val">80%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
             <div class="progress">
-              <span class="skill"><span>AWS RDS &amp; EFS</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              <span class="skill"><span>RDS &amp; DynamoDB</span><i class="val">78%</i></span>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Resume Section -->
+    <!-- Resume -->
     <section id="resume" class="resume section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-        <p>Self-taught AWS Cloud Engineer building real infrastructure on live AWS accounts since 2025.</p>
+        <p>AWS Cloud Engineer with internship experience at Cravita Pvt Ltd and professional training at Fortune Cloud Technologies, Pune.</p>
       </div>
       <div class="container">
         <div class="row">
+
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
             <h3 class="resume-title">Professional Summary</h3>
             <div class="resume-item pb-0">
               <h4>Narendra Deshmukh</h4>
-              <p><em>Motivated AWS Cloud Engineer with practical experience deploying production-grade infrastructure. Skilled in EC2, S3, VPC, IAM, CloudFront, Auto Scaling, and Load Balancers. All projects documented on GitHub with screenshots and architecture diagrams.</em></p>
+              <p><em>AWS Cloud Engineer with hands-on internship experience at Cravita Pvt Ltd and professional AWS &amp; DevOps training at Fortune Cloud Technologies, Pune. Skilled in EC2, S3, VPC, IAM, Lambda, DynamoDB, CloudFront, RDS, SNS, SQS, CloudWatch. All projects live on GitHub with documentation.</em></p>
               <ul>
-                <li>Pune, Maharashtra, India</li>
-                <li>+91 9322531165</li>
+                <li>Pune, Maharashtra, India · +91 9322531165</li>
                 <li>deshmukhn298@gmail.com</li>
                 <li>github.com/narendra-clouds</li>
+                <li>linkedin.com/in/narendra-deshmukh-cloud</li>
               </ul>
             </div>
 
-            <h3 class="resume-title">Education</h3>
+            <h3 class="resume-title">Internship Experience</h3>
+            <div class="resume-item">
+              <h4>Cloud Engineer Intern</h4>
+              <h5>2025 – 2026 &nbsp;·&nbsp; 6 Months</h5>
+              <p><em><strong>Cravita Pvt Ltd</strong> — Pune, Maharashtra</em></p>
+              <ul>
+                <li>Managed AWS EC2 instances for development and testing environments</li>
+                <li>Created and maintained AMIs, EBS volumes, and implemented disaster recovery backups</li>
+                <li>Configured IAM roles, security groups, and SSH access policies</li>
+                <li>Used AWS CLI and CloudWatch for provisioning, monitoring, and alerting</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Training &amp; Education</h3>
+            <div class="resume-item">
+              <h4>Master in Cloud Architecture</h4>
+              <h5>2025 – 2026</h5>
+              <p><em><strong>Fortune Cloud Technologies</strong> — Pune, Maharashtra</em></p>
+              <p>Intensive hands-on AWS &amp; DevOps program covering cloud architecture design, CI/CD pipelines, Linux administration, containerization, and production deployments.</p>
+            </div>
             <div class="resume-item">
               <h4>BCA — Bachelor of Computer Applications</h4>
               <h5>2023 – 2026</h5>
               <p><em>Savitribai Phule Pune University, Pune</em></p>
-              <p>Focused on cloud computing, networking fundamentals, operating systems, and software development concepts.</p>
+              <p>Cloud computing, networking fundamentals, operating systems, and software development.</p>
             </div>
 
-            <h3 class="resume-title">Certifications</h3>
-            <div class="resume-item">
-              <h4>AWS Certified Cloud Practitioner</h4>
-              <h5>In Progress — 2026</h5>
-              <p><em>Amazon Web Services</em></p>
-              <p>Actively preparing with hands-on labs covering all exam domains including cloud concepts, security, technology, and pricing.</p>
-            </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">AWS Hands-On Experience</h3>
+
+            <h3 class="resume-title">Key AWS Projects</h3>
+
+            <div class="resume-item">
+              <h4>Serverless Contact Form — Lambda + DynamoDB + SNS</h4>
+              <h5>2026 – Present</h5>
+              <ul>
+                <li>API Gateway → Lambda → DynamoDB → SNS email notification</li>
+                <li>Zero servers, auto-scales to millions of requests</li>
+                <li>Powers the contact form on this portfolio site</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>S3 Static Website — Production Setup</h4>
+              <h5>2026 – Present</h5>
+              <ul>
+                <li>CloudFront CDN + HTTPS via ACM + Cross-Region Replication</li>
+                <li>Lifecycle rules, access logs, pre-signed URLs — all proved</li>
+              </ul>
+            </div>
 
             <div class="resume-item">
               <h4>Blue-Green Deployment on AWS EC2</h4>
-              <h5>2025 – Present</h5>
+              <h5>2026 – Present</h5>
               <ul>
-                <li>Built complete Blue-Green deployment with Canary rollout on live EC2</li>
-                <li>Configured Application Load Balancer with weighted target groups</li>
-                <li>Proved zero-downtime deployment with screenshots — live on GitHub</li>
+                <li>Zero-downtime deployment with Canary rollout via ALB weighted groups</li>
+                <li>Live on GitHub with full architecture diagram</li>
               </ul>
             </div>
 
@@ -268,63 +453,132 @@
               <h4>Complete VPC from Scratch</h4>
               <h5>2026 – Present</h5>
               <ul>
-                <li>Built VPC with 4 subnets across 2 AZs, public and private</li>
-                <li>Configured NAT Gateway, Internet Gateway, NACLs, Security Groups</li>
-                <li>Deployed Bastion Host — SSHed into private EC2 with no public IP</li>
+                <li>4 subnets across 2 AZs, NAT Gateway, NACLs, Bastion Host</li>
+                <li>SSHed into private EC2 with zero public IP exposure</li>
               </ul>
             </div>
 
-            <div class="resume-item">
-              <h4>S3 Portfolio Website with CloudFront CDN</h4>
-              <h5>2026 – Present</h5>
-              <ul>
-                <li>Hosted static website on S3 with versioning, lifecycle rules, and replication</li>
-                <li>Configured CloudFront distribution with HTTPS and custom error pages</li>
-                <li>Implemented pre-signed URLs, access logs, and Cross-Region Replication</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio / Projects Section -->
+    <!-- Projects -->
     <section id="portfolio" class="portfolio section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Projects</h2>
-        <p>All projects are built on real AWS accounts with full documentation and screenshots on GitHub.</p>
+        <p>All projects built on real AWS accounts — documented with screenshots and architecture diagrams on GitHub.</p>
       </div>
-
       <div class="container">
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
 
-          <!-- Project 1 -->
           <div class="col-lg-4 col-md-6">
-            <div class="portfolio-content h-100" style="border:1px solid #ddd; border-radius:8px; padding:20px;">
-              <h4 style="color:#149ddd;">Blue-Green Deployment on AWS EC2</h4>
-              <p><strong>Services:</strong> EC2, ALB, Auto Scaling, Launch Templates</p>
-              <p>Zero-downtime Blue-Green deployment with Canary rollout using weighted target groups on Application Load Balancer. Fully documented with architecture diagram and screenshots.</p>
-              <a href="https://github.com/narendra-clouds/blue-green-deployment-on-aws" target="_blank" class="btn btn-sm" style="background:#149ddd; color:white; border-radius:4px; padding:6px 14px;">View on GitHub →</a>
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#149ddd;color:#fff;">SERVERLESS</span>
+              <h4 style="color:#149ddd;">Serverless Contact Form</h4>
+              <p class="proj-services"><strong>Services:</strong> Lambda · API Gateway · DynamoDB · SNS · IAM</p>
+              <p>Complete serverless backend — API Gateway receives form data, Lambda saves to DynamoDB and sends instant email via SNS. Zero servers. Auto-scales to millions of requests. Powers this portfolio's contact form.</p>
+              <a href="https://github.com/narendra-clouds/aws-serverless-contact-form" target="_blank" class="proj-btn">View on GitHub →</a>
             </div>
           </div>
 
-          <!-- Project 2 -->
           <div class="col-lg-4 col-md-6">
-            <div class="portfolio-content h-100" style="border:1px solid #ddd; border-radius:8px; padding:20px;">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#28a745;color:#fff;">DEVOPS</span>
+              <h4 style="color:#149ddd;">Blue-Green Deployment on EC2</h4>
+              <p class="proj-services"><strong>Services:</strong> EC2 · ALB · Auto Scaling · Launch Templates</p>
+              <p>Zero-downtime Blue-Green deployment with Canary rollout using ALB weighted target groups. Proved with live traffic switching screenshots. Full architecture on GitHub.</p>
+              <a href="https://github.com/narendra-clouds/blue-green-deployment-on-aws" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#fd7e14;color:#fff;">CDN + STORAGE</span>
+              <h4 style="color:#149ddd;">S3 Static Website — Production Setup</h4>
+              <p class="proj-services"><strong>Services:</strong> S3 · CloudFront · ACM · CRR · Lifecycle</p>
+              <p>Production-grade S3 site with CloudFront HTTPS, Cross-Region Replication to Virginia, lifecycle rules, access logs, and pre-signed URLs. This website is hosted on it.</p>
+              <a href="https://github.com/narendra-clouds/aws-s3-static-website-production-setup" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#6f42c1;color:#fff;">NETWORKING</span>
+              <h4 style="color:#149ddd;">Complete VPC from Scratch</h4>
+              <p class="proj-services"><strong>Services:</strong> VPC · EC2 · NAT Gateway · NACLs · Bastion Host</p>
+              <p>Built complete VPC with 4 subnets across 2 AZs. Configured NAT Gateway, Internet Gateway, NACLs. Deployed Bastion Host and SSHed into private EC2 with no public IP.</p>
+              <a href="https://github.com/narendra-clouds" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#dc3545;color:#fff;">RECOVERY</span>
               <h4 style="color:#149ddd;">EC2 Lost PEM Key Recovery</h4>
-              <p><strong>Services:</strong> EC2, EBS, IAM, Systems Manager</p>
-              <p>Documented 3 methods to recover access to an EC2 instance after losing the PEM key — using EBS volume swap, user data script, and SSM Session Manager. Real-world DevOps scenario.</p>
-              <a href="https://github.com/narendra-clouds" target="_blank" class="btn btn-sm" style="background:#149ddd; color:white; border-radius:4px; padding:6px 14px;">View on GitHub →</a>
+              <p class="proj-services"><strong>Services:</strong> EC2 · EBS · IAM · SSM Session Manager</p>
+              <p>Documented 3 methods to recover access to EC2 after losing PEM key — EBS volume swap, User Data script, and SSM Session Manager. Unique real-world DevOps problem solved.</p>
+              <a href="https://github.com/narendra-clouds/aws-ec2-lost-pem-key-recovery" target="_blank" class="proj-btn">View on GitHub →</a>
             </div>
           </div>
 
-          <!-- Project 3 -->
           <div class="col-lg-4 col-md-6">
-            <div class="portfolio-content h-100" style="border:1px solid #ddd; border-radius:8px; padding:20px;">
-              <h4 style="color:#149ddd;">S3 Static Website with Full AWS Production Setup</h4>
-              <p><strong>Services:</strong> S3, CloudFront, ACM, IAM, CRR</p>
-              <p>Complete S3 static website with CloudFront CDN, HTTPS via ACM, versioning, lifecycle rules, Cross-Region Replication, pre-signed URLs, and access logs. This very website you are viewing.</p>
-              <a href="https://github.com/narendra-clouds" target="_blank" class="btn btn-sm" style="background:#149ddd; color:white; border-radius:4px; padding:6px 14px;">View on GitHub →</a>
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#20c997;color:#fff;">DATABASE</span>
+              <h4 style="color:#149ddd;">RDS MySQL — Private Subnet Setup</h4>
+              <p class="proj-services"><strong>Services:</strong> RDS · EC2 · VPC · Security Groups · IAM</p>
+              <p>Deployed RDS MySQL db.t3.micro in private subnet inside custom VPC. Connected from EC2 via MySQL client, created database, table, inserted and queried real data.</p>
+              <a href="https://github.com/narendra-clouds" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#149ddd;color:#fff;">CI/CD</span>
+              <h4 style="color:#149ddd;">AWS CI/CD Pipeline</h4>
+              <p class="proj-services"><strong>Services:</strong> GitHub Actions · S3 · CloudFront · IAM</p>
+              <p>Automated deployment pipeline — push code to GitHub, GitHub Actions triggers, runs tests, deploys to S3, creates CloudFront invalidation. Zero manual deployments ever needed.</p>
+              <a href="https://github.com/narendra-clouds/aws-cicd-pipeline-s3-cloudfront" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#6f42c1;color:#fff;">ARCHITECTURE</span>
+              <h4 style="color:#149ddd;">Three-Tier Architecture on AWS</h4>
+              <p class="proj-services"><strong>Services:</strong> VPC · EC2 · RDS · ALB · Auto Scaling</p>
+              <p>Complete 3-tier setup — Web tier (ALB + EC2), Application tier (private EC2), Database tier (RDS MySQL isolated subnet). Enterprise-grade production architecture with full documentation.</p>
+              <a href="https://github.com/narendra-clouds/aws-three-tier-architecture" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#fd7e14;color:#fff;">IAC</span>
+              <h4 style="color:#149ddd;">CloudFormation — Infrastructure as Code</h4>
+              <p class="proj-services"><strong>Services:</strong> CloudFormation · EC2 · VPC · S3 · IAM</p>
+              <p>Complete infrastructure defined in YAML templates. One command creates entire VPC, subnets, EC2, security groups, S3 bucket. Version-controlled, repeatable, zero manual clicking.</p>
+              <a href="https://github.com/narendra-clouds/aws-cloudformation-infrastructure" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#0dcaf0;color:#fff;">MONITORING</span>
+              <h4 style="color:#149ddd;">CloudWatch + CloudTrail Monitoring Setup</h4>
+              <p class="proj-services"><strong>Services:</strong> CloudWatch · CloudTrail · SNS · Lambda · IAM</p>
+              <p>Production monitoring setup — CloudWatch alarms on Lambda errors with SNS email alerts, CloudTrail event history for audit trail, log groups with real execution logs captured.</p>
+              <a href="https://github.com/narendra-clouds" target="_blank" class="proj-btn">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="proj-card">
+              <span class="proj-badge" style="background:#e83e8c;color:#fff;">MESSAGING</span>
+              <h4 style="color:#149ddd;">SNS + SQS Fanout Architecture</h4>
+              <p class="proj-services"><strong>Services:</strong> SNS · SQS · Lambda · IAM · CloudWatch</p>
+              <p>Complete fanout pattern — SNS topic delivers simultaneously to SQS queue and email subscriber. Message received in SQS queue proved with live polling screenshots.</p>
+              <a href="https://github.com/narendra-clouds" target="_blank" class="proj-btn">View on GitHub →</a>
             </div>
           </div>
 
@@ -332,141 +586,228 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
+    <!-- Certifications -->
+    <section id="certifications" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certifications &amp; Training</h2>
+        <p>Professional certifications and training in AWS Cloud and DevOps engineering.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <h4 style="margin-bottom:20px;color:#149ddd;font-size:17px;"><i class="bi bi-award-fill"></i> &nbsp;Certifications</h4>
+
+            <div class="cert-card">
+              <div class="cert-icon"><i class="bi bi-cloud-check-fill"></i></div>
+              <div>
+                <h5 style="margin:0 0 3px;font-size:15px;">AWS Certified Cloud Practitioner</h5>
+                <p style="margin:0;color:#666;font-size:12px;">Amazon Web Services · 2026</p>
+                <span class="badge-status s-progress">In Progress — Exam Scheduled</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon" style="background:linear-gradient(135deg,#fd7e14,#e55d00);"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <h5 style="margin:0 0 3px;font-size:15px;">Master in Cloud Architecture</h5>
+                <p style="margin:0;color:#666;font-size:12px;">Fortune Cloud Technologies, Pune · 2026</p>
+                <span class="badge-status s-done">Completed ✓</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon" style="background:linear-gradient(135deg,#6f42c1,#5a32a3);"><i class="bi bi-laptop-fill"></i></div>
+              <div>
+                <h5 style="margin:0 0 3px;font-size:15px;">AWS Solutions Architect Associate</h5>
+                <p style="margin:0;color:#666;font-size:12px;">Amazon Web Services · Planned 2026</p>
+                <span class="badge-status s-planned">Planned</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <h4 style="margin-bottom:20px;color:#149ddd;font-size:17px;"><i class="bi bi-book-fill"></i> &nbsp;Currently Learning</h4>
+
+            <div class="learn-item">
+              <i class="bi bi-check-circle-fill" style="color:#149ddd;font-size:18px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <strong style="font-size:14px;">AWS Cloud Practitioner Exam Prep</strong>
+                <p style="margin:0;font-size:12px;color:#666;">Shared Responsibility, Well-Architected Framework, Pricing Models</p>
+              </div>
+            </div>
+            <div class="learn-item">
+              <i class="bi bi-check-circle-fill" style="color:#28a745;font-size:18px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <strong style="font-size:14px;">Terraform — Infrastructure as Code</strong>
+                <p style="margin:0;font-size:12px;color:#666;">Multi-cloud IaC, provider configuration, state management</p>
+              </div>
+            </div>
+            <div class="learn-item">
+              <i class="bi bi-check-circle-fill" style="color:#fd7e14;font-size:18px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <strong style="font-size:14px;">Docker &amp; Kubernetes Basics</strong>
+                <p style="margin:0;font-size:12px;color:#666;">Containerization, Dockerfile, container orchestration concepts</p>
+              </div>
+            </div>
+            <div class="learn-item">
+              <i class="bi bi-check-circle-fill" style="color:#6f42c1;font-size:18px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <strong style="font-size:14px;">Python for DevOps Automation</strong>
+                <p style="margin:0;font-size:12px;color:#666;">Boto3 scripting, AWS SDK for Python, automation workflows</p>
+              </div>
+            </div>
+            <div class="learn-item">
+              <i class="bi bi-check-circle-fill" style="color:#dc3545;font-size:18px;flex-shrink:0;margin-top:2px;"></i>
+              <div>
+                <strong style="font-size:14px;">CI/CD with GitHub Actions &amp; Jenkins</strong>
+                <p style="margin:0;font-size:12px;color:#666;">Pipeline automation, deployment workflows, webhook triggers</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
-        <p>Cloud infrastructure services I can help with — available for freelance and internship opportunities.</p>
+        <p>Cloud infrastructure services I can help with — available for fresher roles and freelance opportunities in Pune.</p>
       </div>
       <div class="container">
         <div class="row gy-4">
-
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-cloud-upload"></i></div>
             <div>
               <h4 class="title">AWS Infrastructure Setup</h4>
-              <p class="description">VPC design, EC2 deployment, security groups, IAM roles, and production-grade infrastructure setup following AWS best practices.</p>
+              <p class="description">VPC design, EC2 deployment, security groups, IAM roles, and production-grade setup following AWS best practices and least-privilege security.</p>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-lightning-charge"></i></div>
+            <div>
+              <h4 class="title">Serverless Application Development</h4>
+              <p class="description">Lambda functions, API Gateway REST APIs, DynamoDB integration, SNS notifications — complete serverless backends with zero server management.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="icon flex-shrink-0"><i class="bi bi-globe"></i></div>
             <div>
               <h4 class="title">Static Website Hosting on AWS</h4>
-              <p class="description">S3 static website hosting with CloudFront CDN, HTTPS, custom domains, and full production configuration including lifecycle rules and replication.</p>
+              <p class="description">S3 + CloudFront CDN, HTTPS via ACM, custom domains, lifecycle rules, Cross-Region Replication for disaster recovery.</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="icon flex-shrink-0"><i class="bi bi-shield-lock"></i></div>
             <div>
               <h4 class="title">IAM &amp; Cloud Security</h4>
-              <p class="description">IAM users, groups, roles, and custom policies following least-privilege principle. MFA setup, IAM Access Analyzer, and ABAC configuration.</p>
+              <p class="description">IAM users, groups, roles, and custom policies. MFA setup, IAM Access Analyzer, ABAC, security group hardening.</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
             <div class="icon flex-shrink-0"><i class="bi bi-arrow-repeat"></i></div>
             <div>
               <h4 class="title">High Availability &amp; Auto Scaling</h4>
-              <p class="description">Application Load Balancer setup, Auto Scaling Groups with Launch Templates, and Blue-Green deployment for zero-downtime releases.</p>
+              <p class="description">ALB, Auto Scaling Groups, Blue-Green deployments with Canary rollouts for zero-downtime production releases.</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-diagram-3"></i></div>
-            <div>
-              <h4 class="title">VPC &amp; Network Architecture</h4>
-              <p class="description">Custom VPC design with public/private subnets, NAT Gateway, Internet Gateway, NACLs, Bastion Host, and VPC Peering.</p>
-            </div>
-          </div>
-
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
             <div class="icon flex-shrink-0"><i class="bi bi-file-earmark-code"></i></div>
             <div>
               <h4 class="title">Cloud Documentation &amp; GitHub</h4>
-              <p class="description">Professional project documentation with architecture diagrams, step-by-step README files, and screenshot-based proof of implementation.</p>
+              <p class="description">Architecture diagrams, step-by-step README files, screenshot-based proof of implementation — every project fully documented.</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Open to fresher AWS and DevOps Engineer roles in Pune. Feel free to reach out.</p>
+        <p>Open to fresher AWS and DevOps Engineer roles in Pune. Fill the form — I will get back within 24 hours.</p>
       </div>
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
 
           <div class="col-lg-5">
             <div class="info-wrap">
-
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Location</h3>
-                  <p>Pune, Maharashtra, India — 411001</p>
-                </div>
+                <div><h3>Location</h3><p>Pune, Maharashtra, India — 411018</p></div>
               </div>
-
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Phone</h3>
-                  <p>+91 9322531165</p>
-                </div>
+                <div><h3>Phone</h3><p>+91 9322531165</p></div>
               </div>
-
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p><a href="mailto:deshmukhn298@gmail.com">deshmukhn298@gmail.com</a></p>
-                </div>
+                <div><h3>Email</h3><p><a href="mailto:deshmukhn298@gmail.com">deshmukhn298@gmail.com</a></p></div>
               </div>
-
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
                 <i class="bi bi-github flex-shrink-0"></i>
-                <div>
-                  <h3>GitHub</h3>
-                  <p><a href="https://github.com/narendra-clouds" target="_blank">github.com/narendra-clouds</a></p>
-                </div>
+                <div><h3>GitHub</h3><p><a href="https://github.com/narendra-clouds" target="_blank">github.com/narendra-clouds</a></p></div>
               </div>
-
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
                 <i class="bi bi-linkedin flex-shrink-0"></i>
-                <div>
-                  <h3>LinkedIn</h3>
-                  <p><a href="https://www.linkedin.com/in/narendra-deshmukh-cloud/" target="_blank">linkedin.com/in/narendra-deshmukh-cloud</a></p>
-                </div>
+                <div><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/narendra-deshmukh-cloud/" target="_blank">linkedin.com/in/narendra-deshmukh-cloud</a></p></div>
               </div>
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.39005842!2d73.72845!3d18.52435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242117.39005842!2d73.72845!3d18.52435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890" frameborder="0" style="border:0;width:100%;height:250px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
 
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-            <div style="background:#f8f9fa; padding:30px; border-radius:8px; text-align:center;">
-              <i class="bi bi-envelope-open" style="font-size:48px; color:#149ddd;"></i>
-              <h3 style="margin-top:16px;">Get In Touch</h3>
-              <p style="color:#666; margin:16px 0;">I am actively looking for fresher AWS Cloud Engineer and DevOps Engineer roles in Pune. If you have an opportunity or just want to connect, reach out directly:</p>
-              <a href="mailto:deshmukhn298@gmail.com" style="display:inline-block; background:#149ddd; color:white; padding:12px 32px; border-radius:6px; text-decoration:none; font-weight:600; margin:8px;">
-                <i class="bi bi-envelope"></i> deshmukhn298@gmail.com
-              </a>
-              <br>
-              <a href="https://www.linkedin.com/in/narendra-deshmukh-cloud/" target="_blank" style="display:inline-block; background:#0077b5; color:white; padding:12px 32px; border-radius:6px; text-decoration:none; font-weight:600; margin:8px;">
-                <i class="bi bi-linkedin"></i> Connect on LinkedIn
-              </a>
-              <br>
-              <a href="https://github.com/narendra-clouds" target="_blank" style="display:inline-block; background:#333; color:white; padding:12px 32px; border-radius:6px; text-decoration:none; font-weight:600; margin:8px;">
-                <i class="bi bi-github"></i> View My GitHub
-              </a>
+            <div id="contact-form-container">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label class="pb-2">Your Name *</label>
+                  <input type="text" id="cf-name" class="form-control" placeholder="Your full name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="pb-2">Your Email *</label>
+                  <input type="email" id="cf-email" class="form-control" placeholder="your@email.com" required>
+                </div>
+                <div class="col-md-12">
+                  <label class="pb-2">Subject *</label>
+                  <input type="text" id="cf-subject" class="form-control" placeholder="Job Opportunity / Collaboration / Query" required>
+                </div>
+                <div class="col-md-12">
+                  <label class="pb-2">Message *</label>
+                  <textarea id="cf-message" class="form-control" rows="6" placeholder="Tell me about the opportunity or your query..." required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div id="cf-loading" style="display:none;color:#149ddd;margin-bottom:10px;">
+                    <span class="spinner-border spinner-border-sm"></span>&nbsp; Sending your message...
+                  </div>
+                  <div id="cf-error" style="display:none;color:#dc3545;margin-bottom:10px;padding:10px;background:#fff3f3;border-radius:6px;"></div>
+                  <button id="cf-submit-btn" onclick="submitContactForm()"
+                    style="background:#149ddd;color:white;border:none;padding:12px 40px;border-radius:6px;font-weight:600;font-size:15px;cursor:pointer;transition:all 0.3s;">
+                    <i class="bi bi-send"></i>&nbsp; Send Message
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="cf-success" style="display:none;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#f0fff4,#e6ffed);border-radius:12px;border:1px solid #28a745;margin-top:10px;">
+              <div style="font-size:56px;margin-bottom:14px;">✅</div>
+              <h3 style="color:#28a745;margin-bottom:10px;">Message Sent Successfully!</h3>
+              <p style="color:#555;margin-bottom:6px;">Thank you! I will get back to you within 24 hours.</p>
+              <p id="cf-contact-id" style="font-size:12px;color:#aaa;font-family:monospace;"></p>
+              <button onclick="resetContactForm()"
+                style="background:#149ddd;color:white;border:none;padding:10px 24px;border-radius:6px;font-weight:600;cursor:pointer;margin-top:12px;">
+                Send Another Message
+              </button>
+            </div>
+
+            <div class="sl-note" style="margin-top:16px;">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <strong> Powered by AWS Serverless:</strong> This contact form runs on a real AWS backend —
+              API Gateway → Lambda (Python) → DynamoDB → SNS. Messages are permanently saved and
+              I receive an instant email notification. Built by me as part of my serverless project.
             </div>
           </div>
 
@@ -481,19 +822,15 @@
       <div class="copyright text-center">
         <p>© 2026 <strong class="px-1 sitename">Narendra Deshmukh</strong> — AWS Cloud &amp; DevOps Engineer | Pune, India</p>
       </div>
-      <div class="credits text-center" style="margin-top:4px; font-size:13px; color:#888;">
-        
+      <div class="credits text-center" style="margin-top:4px;font-size:13px;color:#888;">
+        Hosted on AWS S3 + CloudFront | ap-south-1 Mumbai
       </div>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
@@ -504,6 +841,56 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const API_URL = 'https://sl3nqe3sy5.execute-api.ap-south-1.amazonaws.com/default/narendra-hello-api';
+
+    async function submitContactForm() {
+      const name    = document.getElementById('cf-name').value.trim();
+      const email   = document.getElementById('cf-email').value.trim();
+      const subject = document.getElementById('cf-subject').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+
+      if (!name || !email || !subject || !message) { showError('Please fill in all fields.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please enter a valid email address.'); return; }
+
+      document.getElementById('cf-loading').style.display = 'block';
+      document.getElementById('cf-error').style.display   = 'none';
+      document.getElementById('cf-submit-btn').disabled   = true;
+
+      try {
+        const res  = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message: subject + ' — ' + message })
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          document.getElementById('contact-form-container').style.display = 'none';
+          document.getElementById('cf-success').style.display = 'block';
+          document.getElementById('cf-contact-id').textContent = 'Reference ID: ' + data.contactId;
+        } else {
+          showError('Something went wrong. Please email me at deshmukhn298@gmail.com');
+        }
+      } catch (e) {
+        showError('Network error. Please email me at deshmukhn298@gmail.com');
+      } finally {
+        document.getElementById('cf-loading').style.display = 'none';
+        document.getElementById('cf-submit-btn').disabled   = false;
+      }
+    }
+
+    function resetContactForm() {
+      document.getElementById('cf-success').style.display             = 'none';
+      document.getElementById('contact-form-container').style.display = 'block';
+      ['cf-name','cf-email','cf-subject','cf-message'].forEach(id => document.getElementById(id).value = '');
+    }
+
+    function showError(msg) {
+      const el = document.getElementById('cf-error');
+      el.textContent = msg; el.style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
